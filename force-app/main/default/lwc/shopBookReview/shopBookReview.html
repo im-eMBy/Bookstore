@@ -1,0 +1,17 @@
+<template>
+  <div class="review">
+    <div class="rating-container">
+      <p class="author">{review.Author__r.FirstName}</p>
+      <c-shop-book-stars-rating
+        rating={review.Rating__c}
+      ></c-shop-book-stars-rating>
+      <template if:true={canDelete}>
+        <button class="delete-button" onclick={handleDelete}>Delete</button>
+      </template>
+    </div>
+    <lightning-formatted-rich-text
+      value={review.Text__c}
+      class="text"
+    ></lightning-formatted-rich-text>
+  </div>
+</template>

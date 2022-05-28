@@ -1,0 +1,50 @@
+button {
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+.add-review-container {
+  margin-top: 10px;
+}
+.review-form {
+  margin-top: 10px;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  padding-bottom: 10px;
+}
+.review-form--open {
+  display: block;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rating-button {
+  padding: 0;
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 1em;
+  border-radius: 50%;
+}
+textarea {
+  padding: 5px;
+  border: 1px solid #daaa63;
+  border-radius: 20px;
+  margin-top: 10px;
+  resize: none;
+  width: 100%;
+}
+.submit-button-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+}

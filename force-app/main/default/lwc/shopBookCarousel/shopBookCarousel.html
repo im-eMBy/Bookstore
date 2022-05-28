@@ -1,0 +1,12 @@
+<template>
+  <template if:true={books}>
+    <div class="books-list">
+      <template for:each={books} for:item="book">
+        <c-shop-book-thumbnail
+          key={book.Id}
+          book={book}
+        ></c-shop-book-thumbnail>
+      </template>
+    </div>
+  </template>
+</template>

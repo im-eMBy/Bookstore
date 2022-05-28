@@ -1,0 +1,10 @@
+.star-container {
+  height: 16px;
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.star-container svg {
+  height: 100%;
+}

@@ -1,0 +1,18 @@
+<template>
+  <button class="book-container" onclick={handleClick}>
+    <div class="cover-container">
+      <template if:true={book.Image_Url__c}>
+        <div class="shadow"></div>
+        <img src={book.Image_Url__c} alt="Book Cover" />
+      </template>
+    </div>
+    <div class="info-container">
+      <c-shop-book-stars-rating
+        rating={book.Rating__c}
+      ></c-shop-book-stars-rating>
+      <p class="author">{book.Author__c}</p>
+      <p class="title">{book.Name}</p>
+      <p class="price">{book.Price__c}$</p>
+    </div>
+  </button>
+</template>

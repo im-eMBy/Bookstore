@@ -1,0 +1,36 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000088;
+}
+.modal-container {
+  background-color: #f8f3ed;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+h1 {
+  font-size: x-large;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.prime-button {
+  background-color: #daaa63;
+  border: none;
+}
+.sec-button {
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+}

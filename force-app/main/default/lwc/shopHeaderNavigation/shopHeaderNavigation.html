@@ -1,0 +1,154 @@
+<template>
+  <template if:false={isMobile}>
+    <nav class="nav">
+      <a class="logo" href="/shop/s">
+        <img src="/file-asset/Bookstore_Logo" alt="Logo" />
+      </a>
+      <ul class="nav-list">
+        <template for:each={navItems} for:item="item">
+          <li key={item.id}>
+            <a
+              href={item.target}
+              class="nav-link"
+              data-target={item.target}
+              onclick={handleNavigate}
+            >
+              {item.label}
+            </a>
+          </li>
+        </template>
+        <template if:true={isGuest}>
+          <li>
+            <a
+              href="/shop/s/login"
+              class="nav-link"
+              data-target="/login"
+              onclick={handleNavigate}
+              >Login</a
+            >
+          </li>
+        </template>
+      </ul>
+      <template if:false={isGuest}>
+        <ul class="nav-list">
+          <li>
+            <a
+              href="/shop/s/my-cart"
+              class="nav-link nav-link--icon"
+              data-target="/my-cart"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Cart_Icon" alt="My Cart" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/shop/s/my-orders"
+              class="nav-link nav-link--icon"
+              data-target="/my-orders"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Order_Icon" alt="My Orders" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/shop/s/profile"
+              class="nav-link nav-link--icon"
+              data-target="/profile"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Profile_Icon" alt="Profile" />
+            </a>
+          </li>
+          <li>
+            <a href="/shop/secur/logout.jsp" class="nav-link nav-link--icon">
+              <img src="/file-asset/Logout_Icon" alt="Logout" />
+            </a>
+          </li>
+        </ul>
+      </template>
+    </nav>
+  </template>
+  <template if:true={isMobile}>
+    <nav class="nav">
+      <a class="logo" href="/shop/s">
+        <img src="/file-asset/Bookstore_Logo" alt="Logo" />
+      </a>
+      <c-shop-hamburger-button
+        is-open={isOpen}
+        open-callback={handleMobileOpen}
+        close-callback={handleMobileClose}
+      ></c-shop-hamburger-button>
+      <ul class="nav-list--mobile">
+        <template for:each={navItems} for:item="item">
+          <li key={item.id}>
+            <a
+              href={item.target}
+              class="nav-link"
+              data-target={item.target}
+              onclick={handleNavigate}
+            >
+              {item.label}
+            </a>
+          </li>
+        </template>
+        <template if:true={isGuest}>
+          <li>
+            <a
+              href="/shop/s/login"
+              class="nav-link"
+              data-target="/login"
+              onclick={handleNavigate}
+              >Login</a
+            >
+          </li>
+        </template>
+        <template if:false={isGuest}>
+          <li>
+            <a
+              href="/shop/s/my-cart"
+              class="nav-link nav-link--icon nav-link--icon-mobile"
+              data-target="/my-cart"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Cart_Icon" alt="My Cart" />
+              <span>My Cart</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/shop/s/my-orders"
+              class="nav-link nav-link--icon nav-link--icon-mobile"
+              data-target="/my-orders"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Order_Icon" alt="My Orders" />
+              <span>My Orders</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/shop/s/profile"
+              class="nav-link nav-link--icon nav-link--icon-mobile"
+              data-target="/profile"
+              onclick={handleNavigate}
+            >
+              <img src="/file-asset/Profile_Icon" alt="Profile" />
+              <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/shop/secur/logout.jsp"
+              class="nav-link nav-link--icon nav-link--icon-mobile"
+            >
+              <img src="/file-asset/Logout_Icon" alt="Logout" />
+              <span>Logout</span>
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+  </template>
+</template>

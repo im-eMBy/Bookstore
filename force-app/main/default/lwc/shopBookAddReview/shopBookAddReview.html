@@ -1,0 +1,34 @@
+<template>
+  <div class="add-review-container">
+    <template if:false={unfolded}>
+      <button class="unfold-button" onclick={handleUnfold}>Add Review</button>
+    </template>
+    <template if:true={unfolded}>
+      <button class="hide-button" onclick={handleFold}>Hide</button>
+    </template>
+    <form onsubmit={handleAddReview} class="review-form">
+      <div class="rating-container">
+        <p>Your rating:</p>
+        <button class="rating-button" onclick={handleRatingDown} type="button">
+          -
+        </button>
+        <c-shop-book-stars-rating rating={rating}></c-shop-book-stars-rating>
+        <button class="rating-button" onclick={handleRatingUp} type="button">
+          +
+        </button>
+      </div>
+      <textarea
+        required
+        name="text"
+        id="review-text"
+        cols="30"
+        rows="10"
+        value={text}
+        onchange={handleTextChange}
+      ></textarea>
+      <div class="submit-button-container">
+        <button type="submit" class="submit-button">Add Review</button>
+      </div>
+    </form>
+  </div>
+</template>

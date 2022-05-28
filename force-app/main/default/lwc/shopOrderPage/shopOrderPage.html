@@ -1,0 +1,64 @@
+<template>
+  <section class="order-section">
+    <c-shop-back-button></c-shop-back-button>
+    <template if:true={order}>
+      <div class="order-info">
+        <div class="order-address">
+          <p>{order.Street__c}</p>
+          <p>{order.Postal_code__c}, {order.City__c}</p>
+          <p>
+            <template if:true={order.Province__c}>
+              {order.Province__c},&nbsp;
+            </template>
+            {order.Country__c}
+          </p>
+        </div>
+        <p>Order date:<br />{order.Created_date__c}</p>
+        <p>Total value:<br />{order.Total_value__c}$</p>
+        <div class="order-status">
+          <p>Status:<br />{order.Status__c}</p>
+          <template if:true={canCancel}>
+            <button class="cancel-button" onclick={handleCancel}>Cancel</button>
+          </template>
+        </div>
+      </div>
+    </template>
+    <template if:false={isNoOrders}>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Cover</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Value</th>
+          </tr>
+          <template for:each={orderPositions} for:item="position">
+            <tr key={position.Id} class="position">
+              <td>
+                <a
+                  class="book-link"
+                  data-id={position.Book__c}
+                  onclick={handleNavigateToBook}
+                  >{position.Book__r.Name}</a
+                >
+              </td>
+              <td class="cover-container">
+                <img src={position.Book__r.Image_Url__c} alt="Book Cover" />
+              </td>
+              <td>{position.Book_price__c}$</td>
+              <td>x{position.Amount__c}</td>
+              <td>{position.Value__c}$</td>
+            </tr>
+          </template>
+        </table>
+      </div>
+    </template>
+  </section>
+  <c-shop-modal
+    is-shown={isModal}
+    message={modalMessage}
+    prime-action={handleCloseModal}
+    prime-action-label="Continue"
+  ></c-shop-modal>
+</template>

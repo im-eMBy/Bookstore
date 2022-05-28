@@ -1,0 +1,58 @@
+<template>
+  <div class="order-form-container">
+    <template if:true={unfolded}>
+      <button class="hide-button" onclick={handleFold}>Hide</button>
+    </template>
+    <template if:false={unfolded}>
+      <button class="show-button" onclick={handleUnfold}>Order</button>
+    </template>
+    <div class="content">
+      <form onsubmit={handleOrder}>
+        <template if:true={userContact}>
+          <div class="user-details">
+            <div class="input-container">
+              <label for="phone">Phone:</label>
+              <input
+                required
+                id="phone"
+                type="number"
+                value={phone}
+                onchange={handlePhoneChange}
+              />
+            </div>
+            <div class="input-container">
+              <label for="email">E-mail:</label>
+              <input
+                required
+                id="email"
+                type="email"
+                value={email}
+                onchange={handleEmailChange}
+              />
+            </div>
+            <c-shop-address-form
+              contact-address={address}
+              update-parent={handleAddressChange}
+            ></c-shop-address-form>
+          </div>
+        </template>
+        <div class="save-as-default">
+          <input
+            type="checkbox"
+            id="save-as-default"
+            checked={saveAsDefault}
+            onchange={handleSaveAsDefaultChange}
+          />
+          <label for="save-as-default">Save contact details as default</label>
+        </div>
+        <button type="submit" class="order-button">Place order</button>
+      </form>
+    </div>
+    <c-shop-modal
+      is-shown={isModal}
+      message={modalMessage}
+      prime-action={handleCloseModal}
+      prime-action-label="Continue"
+    ></c-shop-modal>
+  </div>
+</template>

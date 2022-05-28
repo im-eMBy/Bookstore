@@ -1,0 +1,39 @@
+<template>
+  <section class="login-section">
+    <form onsubmit={handleLogin}>
+      <h1>LOGIN</h1>
+      <div class="input-container">
+        <label for="email">Email:</label>
+        <input
+          required
+          id="email"
+          type="email"
+          value={email}
+          onchange={handleEmailChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="password">Password:</label>
+        <input
+          required
+          id="password"
+          type="password"
+          value={password}
+          onchange={handlePasswordChange}
+        />
+      </div>
+      <template if:true={error}>
+        <p class="error">{error}</p>
+      </template>
+      <div class="bottom-panel">
+        <a
+          href="/shop/s/SelfRegister"
+          onclick={handleNavigateRegister}
+          class="new-user"
+          >New user?</a
+        >
+        <button class="login-button" type="submit">Login</button>
+      </div>
+    </form>
+  </section>
+</template>

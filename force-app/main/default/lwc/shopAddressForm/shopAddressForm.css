@@ -1,0 +1,19 @@
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container label {
+  color: #2c1810;
+}
+.input-container input {
+  padding: 4px;
+  background-color: transparent;
+  color: #2c1810;
+  border: 1px solid #daaa63;
+  border-radius: 5px;
+}

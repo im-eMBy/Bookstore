@@ -1,0 +1,64 @@
+@media (max-width: 800px) {
+  table {
+    font-size: 14px;
+  }
+}
+td,
+th {
+  padding: 10px 5px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 2px solid #2c1810;
+}
+td {
+  border-bottom: 1px solid #2c1810;
+}
+@media (hover: hover) {
+  .book-link:hover {
+    text-decoration: underline;
+  }
+}
+
+.order-section {
+  margin: 20px 0;
+  padding: 0 20px;
+  max-width: calc(90vw - 24px);
+}
+.order-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px 0;
+}
+.order-address {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.order-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.cancel-button {
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+  padding: 5px 10px;
+  border-radius: 20px;
+  min-width: 80px;
+}
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.cover-container {
+  height: 100px;
+}
+.cover-container img {
+  height: 100%;
+}

@@ -1,0 +1,45 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.amount-container--edited {
+  flex-direction: column;
+}
+.edit-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  height: 1.2em;
+}
+.edit-button img {
+  height: 100%;
+  display: block;
+}
+.amount-input {
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+  border-radius: 5px;
+  padding: 2px 5px;
+  max-width: 50px;
+}
+.save-button {
+  border: none;
+  padding: 2px 5px;
+  background-color: transparent;
+  border-radius: 20px;
+}
+@media (hover: hover) {
+  .save-button:hover {
+    transition-duration: 0.3s;
+    background-color: #daaa63;
+  }
+}

@@ -1,0 +1,40 @@
+<template>
+  <template if:true={book}>
+    <section class="book-page">
+      <c-shop-back-button></c-shop-back-button>
+      <div class="content">
+        <div class="info-container">
+          <h2 class="author">{book.Author__c}</h2>
+          <h1 class="title">{book.Name}</h1>
+          <ul class="tags-list">
+            <template for:each={tags} for:item="tag">
+              <li key={tag}>
+                <c-shop-book-tag tag={tag}></c-shop-book-tag>
+              </li>
+            </template>
+          </ul>
+          <template if:true={book.ISBN__c}>
+            <p>ISBN: {book.ISBN__c}</p>
+          </template>
+          <template if:true={book.Cover__c}>
+            <p>{book.Cover__c}</p>
+          </template>
+          <template if:true={book.Pages_nr__c}>
+            <p>Pages: {book.Pages_nr__c}</p>
+          </template>
+        </div>
+        <div class="image-container">
+          <img src={book.Image_Url__c} alt="Book Cover" />
+        </div>
+        <c-shop-add-to-cart-panel book={book}></c-shop-add-to-cart-panel>
+      </div>
+      <div class="description">
+        <h2 class="description-title">Description</h2>
+        <lightning-formatted-rich-text
+          value={book.Description__c}
+        ></lightning-formatted-rich-text>
+      </div>
+      <c-shop-book-reviews book-id={recordId}></c-shop-book-reviews>
+    </section>
+  </template>
+</template>

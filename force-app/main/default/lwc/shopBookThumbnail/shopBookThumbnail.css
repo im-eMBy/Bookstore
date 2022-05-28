@@ -1,0 +1,46 @@
+.book-container {
+  height: 200px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+@media (hover: hover) {
+  .book-container:hover .cover-container {
+    transform: rotate(-8deg);
+    box-shadow: 25px 45px 45px -20px rgba(181, 181, 181, 1);
+    transition-duration: 0.3s;
+  }
+}
+.cover-container {
+  height: 100%;
+  box-shadow: 40px 40px 45px -20px rgba(181, 181, 181, 1);
+  transition-duration: 0.3s;
+}
+.cover-container img {
+  height: 100%;
+}
+.info-container {
+  max-width: 50%;
+  flex-grow: 1;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.author {
+  text-align: left;
+  color: #8f8f8f;
+  font-size: small;
+}
+.title {
+  text-align: left;
+  font-family: "Libre Caslon Text", serif;
+}
+.price {
+  margin-top: 20px;
+}

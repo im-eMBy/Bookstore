@@ -1,0 +1,7 @@
+<template>
+  <div class="stars-container">
+    <template for:each={stars} for:item="star">
+      <c-shop-book-star key={star.index} type={star.type}></c-shop-book-star>
+    </template>
+  </div>
+</template>

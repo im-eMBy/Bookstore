@@ -1,0 +1,20 @@
+.button {
+  background-color: transparent;
+  border: none;
+}
+.button path {
+  transition-duration: 0.3s;
+}
+
+.button--open .hamburger--top {
+  transform-origin: 50% 10%;
+  transform: translateY(40%) rotate(45deg);
+}
+.button--open .hamburger--middle {
+  transform-origin: center;
+  transform: scale(0);
+}
+.button--open .hamburger--bottom {
+  transform-origin: 50% 90%;
+  transform: translateY(-40%) rotate(-45deg);
+}

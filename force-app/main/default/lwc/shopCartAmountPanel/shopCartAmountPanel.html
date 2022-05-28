@@ -1,0 +1,21 @@
+<template>
+  <template if:false={isEdited}>
+    <div class="amount-container">
+      <span>x{position.Amount__c}</span>
+      <button class="edit-button" onclick={handleEdit}>
+        <img src="/file-asset/Edit_Icon" alt="Edit Icon" />
+      </button>
+    </div>
+  </template>
+  <template if:true={isEdited}>
+    <div class="amount-container amount-container--edited">
+      <input
+        class="amount-input"
+        type="number"
+        value={newAmount}
+        onchange={handleAmountChange}
+      />
+      <button class="save-button" onclick={handleSave}>Save</button>
+    </div>
+  </template>
+</template>

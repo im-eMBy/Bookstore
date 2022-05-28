@@ -1,0 +1,22 @@
+<template>
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="/shop/s/" data-target="/" onclick={handleNavigate}>Books</a>
+      <a href="/shop/s/news" data-target="/news" onclick={handleNavigate}
+        >News</a
+      >
+      <a href="/shop/s/contact" data-target="/contact" onclick={handleNavigate}
+        >Contact</a
+      >
+      <template if:false={isGuest}>
+        <a href="/shop/secur/logout.jsp">Logout</a>
+      </template>
+    </nav>
+    <p class="copyright">All rights reversed © Bookstore 2022</p>
+    <div class="contact">
+      <p>Bookstore Ltd.</p>
+      <p>+48 777 888 666</p>
+      <p>bookstore@mail.com</p>
+    </div>
+  </footer>
+</template>

@@ -1,0 +1,15 @@
+<template>
+  <header data-f6-region>
+    <div class="header__inner-container">
+      <slot name="header"></slot>
+    </div>
+  </header>
+  <section class="page-section" data-f6-region>
+    <div class="page-section__inner-container">
+      <slot></slot>
+    </div>
+  </section>
+  <footer data-f6-region>
+    <slot name="footer"></slot>
+  </footer>
+</template>

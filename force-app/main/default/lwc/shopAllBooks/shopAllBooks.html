@@ -1,0 +1,59 @@
+<template>
+  <section class="books-section">
+    <div class="tags-list-container">
+      <ul class="tags-list">
+        <li>
+          <button class="tag-button" onclick={handleShowAll}>Show All</button>
+        </li>
+        <template if:true={tags}>
+          <template for:each={tags} for:item="tag">
+            <li key={tag}>
+              <button class="tag-button" value={tag} onclick={handleTagClick}>
+                <c-shop-book-tag tag={tag}></c-shop-book-tag>
+              </button>
+            </li>
+          </template>
+        </template>
+      </ul>
+    </div>
+    <div class="books-bar">
+      <div class="sort-container">
+        <label for="sort">Sort:</label>
+        <select id="sort" onchange={handleSortChange}>
+          <option value="name" data-dir="asc" selected>Name &#8595;</option>
+          <option value="name" data-dir="desc">Name &#8593;</option>
+          <option value="price" data-dir="asc">Price &#8595;</option>
+          <option value="price" data-dir="desc">Price &#8593;</option>
+          <option value="rating" data-dir="asc">Rating &#8595;</option>
+          <option value="rating" data-dir="desc">Rating &#8593;</option>
+        </select>
+      </div>
+
+      <div class="search-bar">
+        <input
+          class="search-input"
+          type="text"
+          value={keywordInput}
+          onchange={handleKeywordChange}
+        />
+        <button class="search-button" onclick={handleSearch}>Search</button>
+      </div>
+    </div>
+    <template if:true={keyword}>
+      <div class="search-info">
+        <p>Showing results for: "{keyword}"</p>
+        <button onclick={handleClearSearch}>Clear search</button>
+      </div>
+    </template>
+    <template if:true={allBooks}>
+      <div class="books-list">
+        <template for:each={books} for:item="book">
+          <c-shop-book-thumbnail
+            key={book.Id}
+            book={book}
+          ></c-shop-book-thumbnail>
+        </template>
+      </div>
+    </template>
+  </section>
+</template>

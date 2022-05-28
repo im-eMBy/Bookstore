@@ -1,0 +1,55 @@
+<template>
+  <section class="my-cart-section">
+    <template if:true={isNoPosition}>
+      <p class="message">Your shopping cart is empty...</p>
+    </template>
+    <template if:true={isAnyPosition}>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Cover</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Value</th>
+            <th>Remove</th>
+          </tr>
+          <template for:each={cartPositions} for:item="position">
+            <tr key={position.Id}>
+              <td>
+                <a
+                  class="book-link"
+                  data-id={position.Book__c}
+                  onclick={handleNavigateToBook}
+                  >{position.Book__r.Name}</a
+                >
+              </td>
+              <td class="cover-container">
+                <img src={position.Book__r.Image_Url__c} alt="Book Cover" />
+              </td>
+              <td>{position.Book__r.Price__c}$</td>
+              <td>
+                <c-shop-cart-amount-panel
+                  position={position}
+                  update-callback={handleChangeAmount}
+                ></c-shop-cart-amount-panel>
+              </td>
+              <td>{position.Value__c}$</td>
+              <td>
+                <button
+                  class="remove-button"
+                  value={position.Id}
+                  onclick={handleRemove}
+                >
+                  x
+                </button>
+              </td>
+            </tr>
+          </template>
+        </table>
+      </div>
+      <p class="total-value">Total: {totalValue}$</p>
+      <c-shop-order-form></c-shop-order-form>
+    </template>
+  </section>
+</template>

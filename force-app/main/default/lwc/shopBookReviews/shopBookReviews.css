@@ -1,0 +1,20 @@
+h2 {
+  font-size: large;
+  font-weight: 600;
+}
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.average-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.rating {
+  font-weight: 600;
+  margin-right: 5px;
+}

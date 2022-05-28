@@ -1,0 +1,29 @@
+<template>
+  <div class="reviews">
+    <h2>Reviews</h2>
+    <template if:true={reviews}>
+      <div class="average-container">
+        <p class="rating">Average rating: {rating}</p>
+        <c-shop-book-stars-rating rating={avgRating}></c-shop-book-stars-rating>
+      </div>
+    </template>
+    <template if:true={reviews}>
+      <div class="reviews-list">
+        <template for:each={reviews} for:item="review">
+          <c-shop-book-review
+            key={review.Id}
+            review={review}
+            user-id={userId}
+            delete-callback={handleDelete}
+          ></c-shop-book-review>
+        </template>
+      </div>
+    </template>
+    <template if:true={canAdd}>
+      <c-shop-book-add-review
+        book-id={bookId}
+        add-review-callback={handleNewReview}
+      ></c-shop-book-add-review>
+    </template>
+  </div>
+</template>

@@ -1,0 +1,72 @@
+<template>
+  <section class="register-section">
+    <form onsubmit={handleRegister}>
+      <h1>REGISTER</h1>
+      <div class="input-container">
+        <label for="first=name">First Name:</label>
+        <input
+          required
+          id="first=name"
+          type="text"
+          value={firstName}
+          onchange={handleFirstNameChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="last=name">Last Name:</label>
+        <input
+          required
+          id="last=name"
+          type="text"
+          value={lastName}
+          onchange={handleLastNameChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="email">Email:</label>
+        <input
+          required
+          id="email"
+          type="email"
+          value={email}
+          onchange={handleEmailChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="password">Password:</label>
+        <input
+          required
+          id="password"
+          type="password"
+          value={password}
+          onchange={handlePasswordChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          required
+          id="confirm-password"
+          type="password"
+          value={confirmPassword}
+          onchange={handleConfirmPasswordChange}
+        />
+      </div>
+      <template if:true={error}>
+        <p class="error">{error}</p>
+      </template>
+      <div class="bottom-panel">
+        <a href="/shop/s/login" onclick={handleNavigateLogin} class="to-login"
+          >Already have an account?</a
+        >
+        <button class="register-button" type="submit">Sing Up</button>
+      </div>
+    </form>
+    <c-shop-modal
+      is-shown={isModal}
+      message={modalMessage}
+      prime-action={handleCloseModal}
+      prime-action-label="Continue"
+    ></c-shop-modal>
+  </section>
+</template>

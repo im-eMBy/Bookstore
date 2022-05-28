@@ -1,0 +1,58 @@
+<template>
+  <div class="address-form">
+    <div class="input-container">
+      <label for="street">Street, building number:</label>
+      <input
+        required
+        id="street"
+        name="Street"
+        type="text"
+        value={address.street}
+        onchange={handleStreetChange}
+      />
+    </div>
+    <div class="input-container">
+      <label for="city">City:</label>
+      <input
+        required
+        id="city"
+        name="City"
+        type="text"
+        value={address.city}
+        onchange={handleCityChange}
+      />
+    </div>
+    <div class="input-container">
+      <label for="postalCode">Postal Code:</label>
+      <input
+        required
+        id="postalCode"
+        name="PostalCode"
+        type="text"
+        value={address.postalCode}
+        onchange={handlePostalCodeChange}
+      />
+    </div>
+    <div class="input-container">
+      <label for="province">State/Province:</label>
+      <input
+        id="province"
+        name="Province"
+        type="text"
+        value={address.state}
+        onchange={handleStateChange}
+      />
+    </div>
+    <div class="input-container">
+      <label for="country">Country:</label>
+      <input
+        required
+        id="country"
+        name="Country"
+        type="text"
+        value={address.country}
+        onchange={handleCountryChange}
+      />
+    </div>
+  </div>
+</template>

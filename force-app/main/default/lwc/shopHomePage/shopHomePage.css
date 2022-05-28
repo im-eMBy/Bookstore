@@ -1,0 +1,24 @@
+.homepage-section {
+  margin: 20px 10px;
+}
+.news-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.news {
+  padding: 10px;
+  border: 1px solid #daaa63;
+  border-radius: 20px;
+}
+.news-title {
+  font-family: "Libre Caslon Text", serif;
+  font-size: x-large;
+}
+.news-date {
+  font-size: x-small;
+}
+.news-text-container {
+  margin-top: 15px;
+}

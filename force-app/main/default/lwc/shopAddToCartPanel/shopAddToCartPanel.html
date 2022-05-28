@@ -1,0 +1,38 @@
+<template>
+  <template if:true={book}>
+    <div class="panel-container">
+      <p class="price">{value}$</p>
+
+      <div class="amount-container">
+        <button onclick={handleSubtractAmount}>-</button>
+        <input
+          type="number"
+          min="1"
+          max={book.Stock__c}
+          value={orderAmount}
+          onchange={handleOrderAmountChange}
+        />
+        <button onclick={handleAddAmount}>+</button>
+      </div>
+      <p class="in-stock">In stock: {book.Stock__c}</p>
+      <button class="add-button" onclick={handleAddToCart}>
+        + Add to Cart
+      </button>
+      <template if:true={isInCart}>
+        <a class="in-cart" onclick={navigateToCart}>
+          <img src="/file-asset/Cart_Icon" alt="Cart icon" class="cart-icon" />
+          <span>{inCartAmount} in cart</span>
+        </a>
+      </template>
+    </div>
+  </template>
+  <c-shop-modal
+    is-shown={isModal}
+    message={message}
+    prime-action-label="To cart"
+    sec-action-label="Continue"
+    prime-action={modalPrimeAction}
+    sec-action={modalSecAction}
+  >
+  </c-shop-modal>
+</template>

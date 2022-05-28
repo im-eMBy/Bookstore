@@ -1,0 +1,54 @@
+@media (max-width: 800px) {
+  table {
+    font-size: 14px;
+  }
+}
+td,
+th {
+  padding: 10px 5px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 2px solid #2c1810;
+}
+td {
+  border-bottom: 1px solid #2c1810;
+}
+@media (hover: hover) {
+  .book-link:hover {
+    text-decoration: underline;
+  }
+}
+
+.my-cart-section {
+  margin: 20px 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: calc(90vw - 24px);
+}
+.message {
+  font-size: large;
+}
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.cover-container {
+  height: 100px;
+}
+.cover-container img {
+  height: 100%;
+}
+.remove-button {
+  background-color: transparent;
+  color: #daaa63;
+  border: 1px solid #daaa63;
+  border-radius: 50%;
+  padding: 2px 10px;
+}
+.total-value {
+  font-size: large;
+  font-weight: semibold;
+  align-self: flex-end;
+}

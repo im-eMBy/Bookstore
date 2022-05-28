@@ -1,0 +1,27 @@
+<template>
+  <section
+    role="dialog"
+    class="modal slds-modal slds-modal--small slds-fade-in-hide"
+  >
+    <div class="modal-container">
+      <template if:true={header}>
+        <h1>{header}</h1>
+      </template>
+      <template if:true={message}>
+        <template for:each={messages} for:item="msg">
+          <p key={msg}>{msg}</p>
+        </template>
+      </template>
+      <div class="buttons-container">
+        <template if:true={secAction}>
+          <button class="sec-button" onclick={handleSecAction}>
+            {secActionLabel}
+          </button>
+        </template>
+        <button class="prime-button" onclick={handlePrimeAction}>
+          {primeActionLabel}
+        </button>
+      </div>
+    </div>
+  </section>
+</template>

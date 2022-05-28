@@ -1,0 +1,35 @@
+.orders-section {
+  margin: 20px 0;
+  padding: 0 20px;
+  max-width: calc(90vw - 24px);
+}
+.message {
+  font-size: large;
+}
+@media (max-width: 800px) {
+  table {
+    font-size: 14px;
+  }
+}
+td,
+th {
+  padding: 10px 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+th {
+  border-bottom: 2px solid #2c1810;
+}
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.order {
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .order:hover {
+    transition-duration: 0.3s;
+    background-color: #f3e5d0;
+  }
+}

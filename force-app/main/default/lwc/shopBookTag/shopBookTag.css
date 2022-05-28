@@ -1,0 +1,9 @@
+.tag-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tag-img {
+  display: block;
+  height: 32px;
+}

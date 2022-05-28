@@ -1,0 +1,54 @@
+<template>
+  <section class="contact-section">
+    <form onsubmit={handleSend}>
+      <h1>CONTACT</h1>
+      <p>Send us a message.</p>
+      <div class="input-container">
+        <template if:false={isGuest}>
+          <p>Email: {email}</p>
+        </template>
+        <template if:true={isGuest}>
+          <label for="email">Email:</label>
+          <input
+            required
+            id="email"
+            type="email"
+            value={email}
+            onchange={handleEmailChange}
+          />
+        </template>
+      </div>
+      <div class="input-container">
+        <label for="title">Title:</label>
+        <input
+          required
+          id="title"
+          type="text"
+          value={title}
+          onchange={handleTitleChange}
+        />
+      </div>
+      <div class="input-container">
+        <label for="text">Text:</label>
+        <textarea
+          required
+          id="text"
+          value={text}
+          onchange={handleTextChange}
+          cols="30"
+          rows="10"
+        >
+        </textarea>
+      </div>
+      <div class="button-container">
+        <button class="send-button" type="submit">Send</button>
+      </div>
+    </form>
+    <c-shop-modal
+      is-shown={isModal}
+      message={modalMessage}
+      prime-action={handleCloseModal}
+      prime-action-label="Continue"
+    ></c-shop-modal>
+  </section>
+</template>

@@ -1,0 +1,21 @@
+<template>
+  <section class="homepage-section">
+    <div class="news-container">
+      <template if:true={news}>
+        <template for:each={news} for:item="post">
+          <div key={post.Id} class="news">
+            <h2 class="news-title">{post.Name}</h2>
+            <p class="news-date">{post.Created_date__c}</p>
+            <div class="news-text-container">
+              <lightning-formatted-rich-text
+                class="news-text"
+                value={post.Text__c}
+              >
+              </lightning-formatted-rich-text>
+            </div>
+          </div>
+        </template>
+      </template>
+    </div>
+  </section>
+</template>

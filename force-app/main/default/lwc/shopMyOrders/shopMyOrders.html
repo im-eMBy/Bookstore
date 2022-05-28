@@ -1,0 +1,32 @@
+<template>
+  <section class="orders-section">
+    <template if:true={isNoOrders}>
+      <p class="message">No orders to display...</p>
+    </template>
+    <template if:false={isNoOrders}>
+      <div class="order-container">
+        <table>
+          <tr>
+            <th>Order ID</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Created</th>
+          </tr>
+          <template for:each={orders} for:item="order">
+            <tr
+              key={order.Id}
+              class="order"
+              data-value={order.Id}
+              onclick={handleOrderClick}
+            >
+              <td>{order.Name}</td>
+              <td>{order.Status__c}</td>
+              <td>{order.Total_value__c}</td>
+              <td>{order.Created_date__c}</td>
+            </tr>
+          </template>
+        </table>
+      </div>
+    </template>
+  </section>
+</template>
